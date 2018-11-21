@@ -1,0 +1,6 @@
+framework module Pods_ZLGYRX {
+  umbrella header "Pods-ZLGYRX-umbrella.h"
+
+  export *
+  module * { export * }
+}
