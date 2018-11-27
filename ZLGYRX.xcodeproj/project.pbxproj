@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		813E434C21ACE777004D44C3 /* ZLTargetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813E434921ACE777004D44C3 /* ZLTargetViewController.swift */; };
+		813E434D21ACE777004D44C3 /* ZLSegmentBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813E434B21ACE777004D44C3 /* ZLSegmentBtn.swift */; };
+		813E434F21AD16CE004D44C3 /* ZLTargetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813E434E21AD16CE004D44C3 /* ZLTargetTableViewCell.swift */; };
+		813E435321AD232C004D44C3 /* ZLTargetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813E435221AD232C004D44C3 /* ZLTargetModel.swift */; };
 		81AEC16021A290B10017D98F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81AEC15821A290B10017D98F /* Assets.xcassets */; };
 		81AEC16321A290B10017D98F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AEC15D21A290B10017D98F /* AppDelegate.swift */; };
 		81AEC17C21A299CC0017D98F /* ZLBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AEC17521A299CC0017D98F /* ZLBaseController.swift */; };
@@ -22,6 +26,10 @@
 
 /* Begin PBXFileReference section */
 		1503CA05CC1ED1C929902224 /* Pods_ZLGYRX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZLGYRX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		813E434921ACE777004D44C3 /* ZLTargetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLTargetViewController.swift; sourceTree = "<group>"; };
+		813E434B21ACE777004D44C3 /* ZLSegmentBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLSegmentBtn.swift; sourceTree = "<group>"; };
+		813E434E21AD16CE004D44C3 /* ZLTargetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZLTargetTableViewCell.swift; sourceTree = "<group>"; };
+		813E435221AD232C004D44C3 /* ZLTargetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZLTargetModel.swift; sourceTree = "<group>"; };
 		81AEC14121A28FF50017D98F /* ZLGYRX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZLGYRX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AEC15821A290B10017D98F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		81AEC15D21A290B10017D98F /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +75,41 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		813E434721ACE777004D44C3 /* Target */ = {
+			isa = PBXGroup;
+			children = (
+				813E435121AD230B004D44C3 /* Model */,
+				813E434821ACE777004D44C3 /* Controller */,
+				813E434A21ACE777004D44C3 /* View */,
+			);
+			path = Target;
+			sourceTree = "<group>";
+		};
+		813E434821ACE777004D44C3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				813E434921ACE777004D44C3 /* ZLTargetViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		813E434A21ACE777004D44C3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				813E434B21ACE777004D44C3 /* ZLSegmentBtn.swift */,
+				813E434E21AD16CE004D44C3 /* ZLTargetTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		813E435121AD230B004D44C3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				813E435221AD232C004D44C3 /* ZLTargetModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		81AEC13821A28FF50017D98F = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +131,7 @@
 		81AEC14321A28FF50017D98F /* ZLGYRX */ = {
 			isa = PBXGroup;
 			children = (
+				813E434721ACE777004D44C3 /* Target */,
 				81AEC17221A299CC0017D98F /* Common */,
 				81AEC17621A299CC0017D98F /* Login */,
 				81AEC15621A290B10017D98F /* SupportFiles */,
@@ -320,12 +364,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				813E435321AD232C004D44C3 /* ZLTargetModel.swift in Sources */,
 				81C7B8C121A40A31006C183A /* ZLTabBarController.swift in Sources */,
+				813E434C21ACE777004D44C3 /* ZLTargetViewController.swift in Sources */,
 				81C7B8C821A4F8C9006C183A /* ZLRegisterController.swift in Sources */,
 				81C7B8C621A4F7CE006C183A /* ZLNavigationController.swift in Sources */,
 				81AEC17C21A299CC0017D98F /* ZLBaseController.swift in Sources */,
 				81AEC18021A29DA10017D98F /* ZLLoginController.swift in Sources */,
+				813E434F21AD16CE004D44C3 /* ZLTargetTableViewCell.swift in Sources */,
 				81C7B8BF21A4080E006C183A /* SignInViewModel.swift in Sources */,
+				813E434D21ACE777004D44C3 /* ZLSegmentBtn.swift in Sources */,
 				81C7B8AB21A3A404006C183A /* UIKit+Extension.swift in Sources */,
 				81AEC16321A290B10017D98F /* AppDelegate.swift in Sources */,
 				81C7B8AD21A3ACB6006C183A /* ICYSignTextFiled.swift in Sources */,

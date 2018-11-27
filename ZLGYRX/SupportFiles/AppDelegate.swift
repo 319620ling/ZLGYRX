@@ -18,8 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         window = UIWindow.init(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-        let nvc = ZLNavigationController.init(rootViewController: ZLLoginController())
-        window?.rootViewController = nvc
+//        let nvc = ZLNavigationController.init(rootViewController: ZLLoginController())
+        window?.rootViewController = ZLTabBarController()
         return true
     }
 

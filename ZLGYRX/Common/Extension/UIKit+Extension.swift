@@ -57,3 +57,117 @@ extension UIColor {
         return ICYHEXCOLOR("#C7C7CC")
     }
 }
+
+extension UIView {
+    /// 渐变色
+    static func gradualChange (_ addView : UIView) {
+        let gl = CAGradientLayer.init()
+        gl.frame = addView.frame
+        //        gl.startPoint = CGPoint(x: 0.5, y: 0)
+        //        gl.endPoint = CGPoint(x: 0.5, y: 1)
+        gl.colors = [UIColor(red: 227/255.0, green: 107/255.0, blue: 103/255.0, alpha: 1.0).cgColor,
+                     UIColor(red: 233/255.0, green: 172/255.0, blue: 115/255.0, alpha: 1.0).cgColor]
+        gl.locations = [0, 1.0];
+        addView.layer.addSublayer(gl)
+    }
+    
+    /// view的x
+    var icy_x: CGFloat {
+        get{
+            return self.frame.origin.x
+        }
+        set{
+            self.frame.origin.x = newValue
+        }
+    }
+    /// view的y
+    var icy_y: CGFloat{
+        get{
+            return self.frame.origin.y
+        }
+        set{
+            self.frame.origin.y = newValue
+        }
+    }
+    /// view的宽
+    var icy_width: CGFloat{
+        get{
+            return self.frame.size.width
+        }
+        set{
+            self.frame.size.width = newValue
+        }
+    }
+    /// view的高
+    var icy_height: CGFloat{
+        get{
+            return self.frame.size.height
+        }
+        set{
+            self.frame.size.height = newValue
+        }
+    }
+    /// view的上
+    var icy_top: CGFloat{
+        get{
+            return self.frame.origin.y
+        }
+        set{
+            self.frame.origin.y = newValue
+        }
+    }
+    /// view的下
+    var icy_bottom: CGFloat{
+        get{
+            return self.frame.origin.y + self.frame.size.height
+        }
+        set{
+            self.frame.origin.y = newValue - self.frame.size.height
+        }
+    }
+    /// view的左
+    var icy_left: CGFloat{
+        get{
+            return self.frame.origin.x
+        }
+        set{
+            self.frame.origin.x = newValue
+        }
+    }
+    /// view的右
+    var icy_rigicy: CGFloat{
+        get{
+            return self.frame.origin.x + self.frame.size.width
+        }
+        set{
+            self.frame.origin.x = newValue - self.frame.size.width
+        }
+    }
+    /// view的中心
+    var icy_center: CGPoint{
+        get{
+            return self.center
+        }
+        set{
+            self.center = newValue
+        }
+    }
+    /// view的X轴中心
+    var icy_centerX: CGFloat{
+        get{
+            return self.center.x
+        }
+        set{
+            self.center.x = newValue
+        }
+    }
+    /// view的Y轴中心
+    var icy_centerY: CGFloat{
+        get{
+            return self.center.y
+        }
+        set{
+            self.center.y = newValue
+        }
+    }
+}
