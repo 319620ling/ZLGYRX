@@ -13,7 +13,11 @@ class ZLRegisterController: ZLBaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+//        self.navigationController?.navigationBar.isHidden = false
         navigationItem.leftBarButtonItem = UIBarButtonItem.init(title: "返回", style: .plain, target: self, action: #selector(back))
+        navigationItem.rightBarButtonItem = UIBarButtonItem.init(customView: rigntBtn)
+//        navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "下一步", style: .plain, target: self, action: #selector(back))
+//        navigationItem.rightBarButtonItem?.customView?.alpha = 0.5
     }
     @objc private func back() {
         let anmaiton = CATransition.init()
@@ -23,4 +27,11 @@ class ZLRegisterController: ZLBaseController {
         UIApplication.shared.keyWindow?.layer.add(anmaiton, forKey: "anmaiton")
         self.navigationController?.popViewController(animated: false)
     }
+    lazy var rigntBtn : UIButton = {
+        let btn = UIButton(type: .custom)
+        btn.setTitle("下一步", for: .normal)
+        btn.titleLabel?.font = ICYFONT16
+        btn.setTitleColor(UIColor.appThemeColor(), for: .normal)
+        return btn;
+    }()
 }

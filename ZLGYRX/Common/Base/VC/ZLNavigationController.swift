@@ -12,19 +12,17 @@ class ZLNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        navigationBar.tintColor = UIColor.appThemeColor()
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+        super.pushViewController(viewController, animated: animated)
+        if self.viewControllers.count > 1 {
+            viewController.hidesBottomBarWhenPushed = true
+            viewController.navigationController?.navigationBar.isHidden = false
+//            viewController.navigationItem.leftBarButtonItem = RMNavigationController.backNavigationItem(target: self, action: #selector(back))
+        } else {
+            viewController.navigationController?.navigationBar.isHidden = true
+        }
     }
-    */
-
 }

@@ -7,9 +7,6 @@
 //
 
 import UIKit
-import SnapKit
-import RxSwift
-import RxCocoa
 
 class ZLTabBarController: UITabBarController {
     
@@ -38,9 +35,8 @@ class ZLTabBarController: UITabBarController {
             vc.tabBarItem.image = UIImage(named: "tabbar_icon_\(tabBarTitleArray[index].1)_disable")
             let selectedImage = UIImage(named: "tabbar_icon_\(tabBarTitleArray[index].1)")
             vc.tabBarItem.selectedImage = selectedImage?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
-//            let nvc = ZLBaseNavigationController(rootViewController: vc)
-//            addChild(nvc)
-            addChild(vc)
+            let nvc = ZLNavigationController(rootViewController: vc)
+            addChild(nvc)
         }
     }
 }

@@ -7,14 +7,18 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
 class ZLLoginController: ZLBaseController {
 
+    let disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        navigationController?.navigationBar.isHidden = true
         setUpViews()
+        bindToView()
     }
     fileprivate func setUpViews() {
         view.addSubview(topIcon)
@@ -32,9 +36,11 @@ class ZLLoginController: ZLBaseController {
     fileprivate func bindToView() {
         let signInViewModel = SignInViewModel.init(input: (username: loginTF.textFiled.rx.text.orEmpty.asDriver(), password: loginTF.textFiled.rx.text.orEmpty.asDriver(), signInTaps: loginBtn.rx.tap.asObservable().share()))
         
-        loginBtn.rx.tap.subscribe { event in
-            print("123")
-        }.disposed(by: disposeBag)
+        registerBtn.rx.tap.subscribe(onNext: { [weak self] in
+            guard let `self` = self else {return}
+            self.view.endEditing(true)
+            self.navigationController?.pushViewController(ZLRegisterController(), animated: false)
+        }).disposed(by: disposeBag)
     }
     fileprivate lazy var topIcon : UIImageView = {
         let img = UIImageView.init(frame: CGRect(x: 0, y: 0, width: 172, height: 220))
@@ -79,7 +85,7 @@ class ZLLoginController: ZLBaseController {
         btn.titleLabel?.font = ICYFONT16
         btn.setTitleColor(ICYHEXCOLOR("0xFFFFFF"), for: .normal)
         btn.alpha = 0.5
-//        btn.isEnabled = false
+        btn.isEnabled = false
         btn.backgroundColor = UIColor.appThemeColor()
         btn.layer.cornerRadius = 20
         return btn;
@@ -117,6 +123,8 @@ class ZLLoginController: ZLBaseController {
     private func createThirdLoginBtn(name: String,iconName: String) -> UIButton {
         let btn = UIButton(type: .custom)
         btn.setTitle(name, for: .normal)
+        btn.imageEdgeInsets = UIEdgeInsets(top: -18, left: 0, bottom: 0, right: 0)
+        btn.titleEdgeInsets = UIEdgeInsets(top: 0, left: -46, bottom: -48, right: 0)
         btn.titleLabel?.font = ICYFONT10
         btn.setTitleColor(ICYHEXCOLOR("0xFFFFFF"), for: .normal)
         btn.setImage(UIImage.init(named: iconName), for: .normal)

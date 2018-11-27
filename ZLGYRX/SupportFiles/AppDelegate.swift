@@ -7,9 +7,7 @@
 //
 
 import UIKit
-import RxSwift
 
-let disposeBag = DisposeBag()
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
