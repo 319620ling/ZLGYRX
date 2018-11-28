@@ -48,6 +48,8 @@ func ICYHEXCOLOR(_ hex : String) -> UIColor {
     return UIColor(red: CGFloat(r) / 255.0, green: CGFloat(g) / 255.0, blue: CGFloat(b) / 255.0, alpha: CGFloat(1))
 }
 
+
+
 extension UIColor {
     //主色调
     static func appThemeColor() -> UIColor {
@@ -60,19 +62,16 @@ extension UIColor {
 
 extension UIView {
     /// 渐变色
-    static func gradualChange (_ addView : UIView) {
+    static func gradualChange (_ addView: UIView,colors: [CGColor]) {
         let gl = CAGradientLayer.init()
         gl.frame = addView.frame
         //        gl.startPoint = CGPoint(x: 0.5, y: 0)
         //        gl.endPoint = CGPoint(x: 0.5, y: 1)
-        gl.colors = [UIColor(red: 227/255.0, green: 107/255.0, blue: 103/255.0, alpha: 1.0).cgColor,
-                     UIColor(red: 233/255.0, green: 172/255.0, blue: 115/255.0, alpha: 1.0).cgColor]
+        gl.colors = colors
         gl.locations = [0, 1.0];
         addView.layer.addSublayer(gl)
     }
-    
-    /// view的x
-    var icy_x: CGFloat {
+    var x: CGFloat {
         get{
             return self.frame.origin.x
         }
@@ -80,8 +79,7 @@ extension UIView {
             self.frame.origin.x = newValue
         }
     }
-    /// view的y
-    var icy_y: CGFloat{
+    var y: CGFloat{
         get{
             return self.frame.origin.y
         }
@@ -89,8 +87,7 @@ extension UIView {
             self.frame.origin.y = newValue
         }
     }
-    /// view的宽
-    var icy_width: CGFloat{
+    var width: CGFloat{
         get{
             return self.frame.size.width
         }
@@ -98,8 +95,7 @@ extension UIView {
             self.frame.size.width = newValue
         }
     }
-    /// view的高
-    var icy_height: CGFloat{
+    var height: CGFloat{
         get{
             return self.frame.size.height
         }
@@ -107,8 +103,7 @@ extension UIView {
             self.frame.size.height = newValue
         }
     }
-    /// view的上
-    var icy_top: CGFloat{
+    var top: CGFloat{
         get{
             return self.frame.origin.y
         }
@@ -116,8 +111,7 @@ extension UIView {
             self.frame.origin.y = newValue
         }
     }
-    /// view的下
-    var icy_bottom: CGFloat{
+    var bottom: CGFloat{
         get{
             return self.frame.origin.y + self.frame.size.height
         }
@@ -125,8 +119,7 @@ extension UIView {
             self.frame.origin.y = newValue - self.frame.size.height
         }
     }
-    /// view的左
-    var icy_left: CGFloat{
+    var left: CGFloat{
         get{
             return self.frame.origin.x
         }
@@ -134,8 +127,7 @@ extension UIView {
             self.frame.origin.x = newValue
         }
     }
-    /// view的右
-    var icy_rigicy: CGFloat{
+    var right: CGFloat{
         get{
             return self.frame.origin.x + self.frame.size.width
         }
@@ -143,17 +135,7 @@ extension UIView {
             self.frame.origin.x = newValue - self.frame.size.width
         }
     }
-    /// view的中心
-    var icy_center: CGPoint{
-        get{
-            return self.center
-        }
-        set{
-            self.center = newValue
-        }
-    }
-    /// view的X轴中心
-    var icy_centerX: CGFloat{
+    var centerX: CGFloat{
         get{
             return self.center.x
         }
@@ -161,13 +143,58 @@ extension UIView {
             self.center.x = newValue
         }
     }
-    /// view的Y轴中心
-    var icy_centerY: CGFloat{
+    var centerY: CGFloat{
         get{
             return self.center.y
         }
         set{
             self.center.y = newValue
         }
+    }
+}
+
+extension Date {
+    /// Date转换String
+    static func stringFromDate(date: Date, format: String = "yyyy-MM-dd HH:mm:ss") -> String {
+        let formatter = DateFormatter.init()
+        formatter.locale = Locale(identifier: "zh_CN")
+        formatter.dateFormat = format
+        let dateString = formatter.string(from: date)
+        return dateString
+    }
+    /// 上个月
+    static func lastMonth(_ date: Date) -> Date {
+        var dateCom = DateComponents()
+        dateCom.month = -1
+        let newDate = (Calendar.current as NSCalendar).date(byAdding: dateCom, to: date, options: NSCalendar.Options.matchStrictly)
+        return newDate!
+    }
+    /// 下个月
+    static func nextMonth(_ date: Date) -> Date {
+        var dateCom = DateComponents()
+        let abc = 1
+        dateCom.month = +abc
+        let newDate = (Calendar.current as NSCalendar).date(byAdding: dateCom, to: date, options: NSCalendar.Options.matchStrictly)
+        return newDate!
+    }
+    /// 当月的天数
+    static func daysInCurrMonth(date: Date) -> Int {
+        let days: NSRange = (Calendar.current as NSCalendar).range(of: NSCalendar.Unit.day, in: NSCalendar.Unit.month, for: date)
+        return days.length
+    }
+    /// 当前月份的第一天是周几
+    static func firstDayIsWeekInMonth(date: Date) -> Int {
+        var calender = Calendar.current
+        calender.firstWeekday = 1
+        var com = (calender as NSCalendar).components([NSCalendar.Unit.year, NSCalendar.Unit.month, NSCalendar.Unit.day], from: date)
+        com.day = 1
+        let firstDay = calender.date(from: com)
+        let firstWeek = (calender as NSCalendar).ordinality(of: NSCalendar.Unit.weekday, in: NSCalendar.Unit.weekOfMonth, for: firstDay!)
+        return firstWeek - 1
+    }
+    /// 当前月份的几号
+    static func day(_ date: Date) -> Int {
+        let com = (Calendar.current as NSCalendar).components([NSCalendar.Unit.year, NSCalendar.Unit.month, NSCalendar.Unit.day], from: date)
+        return com.day!
     }
 }

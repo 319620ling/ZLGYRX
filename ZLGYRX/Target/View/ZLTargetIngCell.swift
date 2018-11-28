@@ -8,10 +8,11 @@
 
 import UIKit
 
-class ZLTargetTableViewCell: UITableViewCell {
+class ZLTargetIngCell: UITableViewCell {
 
     func setUpviews() {
         backgroundColor = UIColor.clear
+        selectionStyle = .none
         let BG = UIView()
         BG.backgroundColor = UIColor.white
         addSubview(BG)
@@ -78,7 +79,7 @@ class ZLTargetTableViewCell: UITableViewCell {
         }
     }
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super .init(style: style, reuseIdentifier: reuseIdentifier)
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         setUpviews()
     }
     required init?(coder aDecoder: NSCoder) {

@@ -17,5 +17,8 @@ class ZLBaseController: UIViewController {
         view.backgroundColor = UIColor.white
         // Do any additional setup after loading the view.
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super .viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = true
+    }
 }
