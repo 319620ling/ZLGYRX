@@ -65,12 +65,12 @@ class ZLTargetViewController: ZLBaseController {
         tableView.backgroundColor = UIColor.clear
     }
     func bindToView() {
-        let rxDataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, ZLTargetModel>>(configureCell: {(dataSource, tableview, indexPatch, model) -> UITableViewCell in
+        let rxDataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, ZLTargetModel>>(configureCell: {(dataSource, tableview, indexPath, model) -> UITableViewCell in
             if self.targetState == .ing {
                 let cell = self.tableView.dequeueReusableCell(withIdentifier: ZLTargetIngCell.description()) as! ZLTargetIngCell
                 cell.gotoSend.rx.tap.subscribe(onNext: {[weak self] _ in
 //                    guard let self = self else {return}
-                    print("\(indexPatch.row) + ------为它去种")
+                    print("\(indexPath.row) + ------为它去种")
                 }).disposed(by:self.disposeBag)
                 cell.punchCard.rx.tap.subscribe(onNext: {[weak self] _ in
                     guard let self = self else {return}
