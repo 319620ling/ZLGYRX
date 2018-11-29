@@ -197,4 +197,12 @@ extension Date {
         let com = (Calendar.current as NSCalendar).components([NSCalendar.Unit.year, NSCalendar.Unit.month, NSCalendar.Unit.day], from: date)
         return com.day!
     }
+    /// 今天是周几
+    static func todayIsWeekInMonth() -> Int {
+        let calender = Calendar.current
+        var com = (calender as NSCalendar).components([NSCalendar.Unit.year, NSCalendar.Unit.month, NSCalendar.Unit.day], from: Date())
+        let firstDay = calender.date(from: com)
+        let firstWeek = (calender as NSCalendar).ordinality(of: NSCalendar.Unit.weekday, in: NSCalendar.Unit.weekOfMonth, for: firstDay!)
+        return firstWeek - 1
+    }
 }

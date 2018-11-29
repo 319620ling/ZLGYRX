@@ -28,7 +28,7 @@ class ZLTabBarController: UITabBarController {
         //        delegate = self
     }
     private func setupUI() {
-        let tabBarVCArray : [UIViewController] = [ZLLoginController(),ZLLoginController(),ZLTargetViewController()]
+        let tabBarVCArray : [UIViewController] = [ZLToDoViewController(),ZLTomatoController(),ZLTargetViewController()]
         let tabBarTitleArray = [("待办事项","dbsx"),("种番茄","zfq"),("小目标","xmb")]
         for (index, vc) in tabBarVCArray.enumerated() {
             vc.tabBarItem.title = tabBarTitleArray[index].0
