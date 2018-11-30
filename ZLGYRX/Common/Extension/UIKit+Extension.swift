@@ -62,11 +62,15 @@ extension UIColor {
 
 extension UIView {
     /// 渐变色
-    static func gradualChange (_ addView: UIView,colors: [UIColor]) {
+    static func gradualChange (_ addView: UIView,colors: [UIColor],isLandscape: Bool=false) {
         let gl = CAGradientLayer.init()
         gl.frame = addView.frame
         //        gl.startPoint = CGPoint(x: 0.5, y: 0)
         //        gl.endPoint = CGPoint(x: 0.5, y: 1)
+//        if isLandscape {//横向渐变
+//            gl.startPoint = CGPoint(x: 0, y: 0)
+//            gl.endPoint = CGPoint(x: 0, y: 1)
+//        }
         var arr : [CGColor] = [CGColor]()
         colors.forEach { element in
             arr.append(element.cgColor)

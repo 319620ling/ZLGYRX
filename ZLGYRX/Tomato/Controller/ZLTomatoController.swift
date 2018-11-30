@@ -25,6 +25,10 @@ class ZLTomatoController: ZLBaseController {
         view.addSubview(goldNumView)
         view.addSubview(titleLab)
         view.addSubview(textF)
+        view.addSubview(changeSeedBtn)
+        view.addSubview(sendStateImg)
+        view.addSubview(sendStateImg)
+        view.addSubview(bottomBG)
     }
     func bindToView()  {
         menuBtn.rx.tap.subscribe(onNext: {_ in
@@ -84,5 +88,27 @@ class ZLTomatoController: ZLBaseController {
         tf.leftView = v
         tf.leftViewMode = .always
         return tf
+    }()
+    private lazy var changeSeedBtn : UIButton = {
+        let btn = UIButton(type: .custom)
+        btn.frame = CGRect(x: kScreenWidth-14-36, y: 188, width: 36, height: 34)
+        btn.setImage(#imageLiteral(resourceName: "tabbar_icon_zfq"), for: .normal)
+        btn.setTitle("换种子", for: .normal)
+        btn.setTitleColor(UIColor.appThemeColor(), for: .normal)
+        btn.titleLabel?.font = ICYFONT12
+        btn.imageEdgeInsets = UIEdgeInsets(top: -12, left: 6, bottom: 0, right: 0)
+        btn.titleEdgeInsets = UIEdgeInsets(top: 15, left: -30, bottom: -10, right: -10)
+        return btn
+    }()
+    private lazy var sendStateImg : UIImageView = {
+        let img = UIImageView(frame: CGRect(x: (kScreenWidth-145)/2.0, y: 201, width: 145, height: 150))
+        img.image = #imageLiteral(resourceName: "img_plant_03")
+        img.contentMode = .scaleAspectFit
+        return img
+    }()
+    private lazy var bottomBG : UIView = {
+        let v = UIView(frame: CGRect(x: 0, y: kScreenHeight-197, width: kScreenWidth, height: 100))
+        UIView.gradualChange(v, colors: [ICYHEXCOLOR("#F89F6E"),UIColor.appThemeColor()])
+        return v
     }()
 }
