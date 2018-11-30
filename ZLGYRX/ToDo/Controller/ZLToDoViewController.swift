@@ -45,12 +45,12 @@ class ZLToDoViewController: ZLBaseController {
             } else {
                 self.topBG.height = 177
             }
-            UIView.gradualChange(self.topBG, colors: [ICYHEXCOLOR("#F89F6E").cgColor,UIColor.appThemeColor().cgColor])
+            UIView.gradualChange(self.topBG, colors: [ICYHEXCOLOR("#F89F6E"),UIColor.appThemeColor()])
         }).disposed(by: disposeBag)
     }
     private lazy var topBG : UIView = {
         let v = UIView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 177))
-        UIView.gradualChange(v, colors: [ICYHEXCOLOR("#F89F6E").cgColor,UIColor.appThemeColor().cgColor])
+        UIView.gradualChange(v, colors: [ICYHEXCOLOR("#F89F6E"),UIColor.appThemeColor()])
         return v
     }()
     private lazy var contentBG : UIView = {

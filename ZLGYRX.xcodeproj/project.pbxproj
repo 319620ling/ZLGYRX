@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8134A37621B0C9CC00A1022B /* ZLGoldNumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8134A37521B0C9CC00A1022B /* ZLGoldNumView.swift */; };
 		813E434C21ACE777004D44C3 /* ZLTargetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813E434921ACE777004D44C3 /* ZLTargetViewController.swift */; };
 		813E434D21ACE777004D44C3 /* ZLSegmentBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813E434B21ACE777004D44C3 /* ZLSegmentBtn.swift */; };
 		813E434F21AD16CE004D44C3 /* ZLTargetIngCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813E434E21AD16CE004D44C3 /* ZLTargetIngCell.swift */; };
@@ -35,6 +36,7 @@
 
 /* Begin PBXFileReference section */
 		1503CA05CC1ED1C929902224 /* Pods_ZLGYRX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZLGYRX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8134A37521B0C9CC00A1022B /* ZLGoldNumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZLGoldNumView.swift; sourceTree = "<group>"; };
 		813E434921ACE777004D44C3 /* ZLTargetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLTargetViewController.swift; sourceTree = "<group>"; };
 		813E434B21ACE777004D44C3 /* ZLSegmentBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLSegmentBtn.swift; sourceTree = "<group>"; };
 		813E434E21AD16CE004D44C3 /* ZLTargetIngCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZLTargetIngCell.swift; sourceTree = "<group>"; };
@@ -91,6 +93,14 @@
 				85B50E61506262981F6C805D /* Pods-ZLGYRX.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		8134A37421B0C97C00A1022B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8134A37521B0C9CC00A1022B /* ZLGoldNumView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		813E434721ACE777004D44C3 /* Target */ = {
@@ -162,6 +172,7 @@
 		8177F23521AFDD1C005525CF /* Tomato */ = {
 			isa = PBXGroup;
 			children = (
+				8134A37421B0C97C00A1022B /* View */,
 				8177F23621AFDD34005525CF /* Controller */,
 			);
 			path = Tomato;
@@ -440,6 +451,7 @@
 				81AEC17C21A299CC0017D98F /* ZLBaseController.swift in Sources */,
 				813E435F21AE6D87004D44C3 /* MZCalendarKit.swift in Sources */,
 				81AEC18021A29DA10017D98F /* ZLLoginController.swift in Sources */,
+				8134A37621B0C9CC00A1022B /* ZLGoldNumView.swift in Sources */,
 				8177F23421AF9175005525CF /* ZLToDoCalendarCell.swift in Sources */,
 				813E435921AE1B58004D44C3 /* ZLTargetFinishCell.swift in Sources */,
 				813E436121AE6ED4004D44C3 /* MZDaysCell.swift in Sources */,

@@ -59,7 +59,7 @@ class ZLTargetViewController: ZLBaseController {
     func setUpViews()  {
         let BG = UIView.init(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 116))
         view.addSubview(BG);
-        UIView.gradualChange(BG,colors: [ICYHEXCOLOR("#E36B67").cgColor,ICYHEXCOLOR("#E9AC73").cgColor])
+        UIView.gradualChange(BG,colors: [ICYHEXCOLOR("#E36B67"),ICYHEXCOLOR("#E9AC73")])
         BG.addSubview(ingBtn);     BG.addSubview(finishBtn);         finishBtn.btn.alpha = 0.6
         finishBtn.line.isHidden = true;  view.addSubview(addBtn);    view.addSubview(tableView)
         tableView.backgroundColor = UIColor.clear

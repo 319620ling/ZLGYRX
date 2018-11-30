@@ -36,7 +36,7 @@ class MZCalendarKit: UIView {
     //日历控件头部
     private lazy var calendarHeadView: UIView = {
         let calendarHeadView = UIView(frame: CGRect(x: 0, y: 0, width: self.width, height: 42))
-        UIView.gradualChange(calendarHeadView, colors: [UIColor.appThemeColor().cgColor,ICYHEXCOLOR("#F89F6E").cgColor])
+        UIView.gradualChange(calendarHeadView, colors: [UIColor.appThemeColor(),ICYHEXCOLOR("#F89F6E")])
         return calendarHeadView
     }()
     

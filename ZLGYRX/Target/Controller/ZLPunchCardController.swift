@@ -16,7 +16,7 @@ class ZLPunchCardController: ZLBaseController {
         setUpViews()
     }
     func setUpViews()  {
-        UIView.gradualChange(view,colors: [ICYHEXCOLOR("#D96966").cgColor,ICYHEXCOLOR("#E8A669").cgColor])
+        UIView.gradualChange(view,colors: [ICYHEXCOLOR("#D96966"),ICYHEXCOLOR("#E8A669")])
         view.addSubview(dateLab)
         dateLab.snp.makeConstraints { (make) in
             make.left.right.equalToSuperview()
